@@ -23,7 +23,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 public class OkHttpUtils {
     private static final String TAG = "OkHttpUtils";
     private Handler handler = new Handler(Looper.getMainLooper());
-    OkHttpClient client = new OkHttpClient();
+    OkHttpClient client;
 
     private OkHttpUtils() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
@@ -33,7 +33,7 @@ public class OkHttpUtils {
             }
         });
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder()
+        client = new OkHttpClient.Builder()
                 .addInterceptor(logging)
                 .build();
     }
