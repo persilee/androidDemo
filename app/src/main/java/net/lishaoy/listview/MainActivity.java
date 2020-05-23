@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
         data.add(item);
         Item item2 = new Item(R.drawable.ic_pages,"ViewPager",ViewPagerActivity.class);
         data.add(item2);
+        Item item3 = new Item(R.drawable.ic_message,"Handler",HandlerActivity.class);
+        data.add(item3);
+        Item item4 = new Item(R.drawable.ic_network,"OKHttp",OKHttpActivity.class);
+        data.add(item4);
 
         BaseAdapter adapter = new MyAdapter(data,this);
 
