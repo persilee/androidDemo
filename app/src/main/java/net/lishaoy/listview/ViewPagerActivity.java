@@ -30,6 +30,14 @@ public class ViewPagerActivity extends AppCompatActivity {
                 Intent it1 = new Intent(this, BannerPluginActivity.class);
                 startActivity(it1);
                 break;
+            case R.id.tab_layout:
+                Intent it2 = new Intent(this, TabLayoutActivity.class);
+                startActivity(it2);
+                break;
+            case R.id.fly_tab_layout:
+                Intent it3 = new Intent(this, FlyTabLayoutActivity.class);
+                startActivity(it3);
+                break;
         }
     }
 }

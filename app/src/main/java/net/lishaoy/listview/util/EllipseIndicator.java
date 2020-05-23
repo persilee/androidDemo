@@ -53,7 +53,6 @@ public class EllipseIndicator extends BaseIndicator {
         mPaint.setColor(config.getNormalColor());
         float left = 0;
         for (int i = 0; i < count; i++) {
-            Log.e(TAG, "onDraw: " + String.valueOf(config.getCurrentPosition()) + "i: " + String.valueOf(i));
             float x = maxRadius + (config.getNormalWidth() + config.getIndicatorSpace()) * i;
             canvas.drawCircle(x, mNormalRadius, mNormalRadius, mPaint);
         }

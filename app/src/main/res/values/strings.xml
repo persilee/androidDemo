@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Demo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_android">hello android</string>
+    <string name="hello_flutter">hello flutter</string>
+    <string name="hello_ios">hello iOS</string>
+    <string name="hello_react">hello react</string>
 </resources>
