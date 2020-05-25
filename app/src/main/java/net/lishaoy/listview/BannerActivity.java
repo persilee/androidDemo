@@ -28,9 +28,9 @@ public class BannerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_banner);
         setTitle("Banner");
 
-        images.add(R.mipmap.bg1);
-        images.add(R.mipmap.bg2);
-        images.add(R.mipmap.bg4);
+        images.add(R.drawable.bg1);
+        images.add(R.drawable.bg2);
+        images.add(R.drawable.bg4);
         RecyclerView.Adapter adapter = new RecyclerView.Adapter() {
             @NonNull
             @Override

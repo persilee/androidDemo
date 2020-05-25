@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ListViewActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:text="这是一个 ArrayAdapter 实现的简单的 ListView，首页是用 BaseAdapter 实现的 ListView，所以在这就不再演示。实现 Adapter 要注意的就是用 ViewHolder 来优化 ListView 的显示。" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ddd" />
 
     <ListView
         android:id="@+id/v_array_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

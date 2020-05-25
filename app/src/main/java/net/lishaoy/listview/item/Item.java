@@ -1,4 +1,4 @@
-package net.lishaoy.listview;
+package net.lishaoy.listview.item;
 
 import android.app.Activity;
 

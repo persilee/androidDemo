@@ -7,6 +7,16 @@
     tools:context=".BannerPluginActivity"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用 banner 插件实现"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/banner_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.youth.banner.Banner
         android:id="@+id/banner_container"
         android:layout_width="match_parent"

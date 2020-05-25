@@ -42,9 +42,9 @@ public class BannerPluginActivity extends AppCompatActivity implements OnPageCha
         setContentView(R.layout.activity_banner_plugin);
         setTitle("BannerPlugin");
 
-        images.add(R.mipmap.bg1);
-        images.add(R.mipmap.bg2);
-        images.add(R.mipmap.bg4);
+        images.add(R.drawable.bg1);
+        images.add(R.drawable.bg2);
+        images.add(R.drawable.bg4);
 
         banner = findViewById(R.id.banner_container);
         banner.setAdapter(new ImageAdapter(DataBean.getTestData()));

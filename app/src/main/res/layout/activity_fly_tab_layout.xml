@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context=".FlyTabLayoutActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:text="使用 FlycoTabLayout + ViewPager 实现"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/sliding_tab_layout"
         android:layout_width="match_parent"
