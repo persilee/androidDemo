@@ -1,18 +1,28 @@
 package net.lishaoy.listview;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+
 import net.lishaoy.listview.bean.Card;
+import net.lishaoy.listview.util.BannerUtils;
 
 import java.util.List;
 
+import static androidx.cardview.widget.CardView.*;
+
 public class CardAdapter extends BaseAdapter {
+
+    private static final String TAG = "CardAdapter";
 
     private Context context;
     private LayoutInflater inflater;
@@ -48,6 +58,7 @@ public class CardAdapter extends BaseAdapter {
             viewHoder.imageView = convertView.findViewById(R.id.card_list_img);
             viewHoder.title = convertView.findViewById(R.id.card_list_title);
             viewHoder.content = convertView.findViewById(R.id.card_list_content);
+            viewHoder.cardView = convertView.findViewById(R.id.card_card);
             convertView.setTag(viewHoder);
         }else {
             viewHoder = (ViewHoder) convertView.getTag();
@@ -57,7 +68,17 @@ public class CardAdapter extends BaseAdapter {
         viewHoder.imageView.setImageResource(card.getImgId());
         viewHoder.title.setText(card.getTitle());
         viewHoder.content.setText(card.getContent());
-
+        Log.d(TAG, "getView: " + position);
+//        if (position == 0) {
+//            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) viewHoder.cardView.getLayoutParams();
+//            layoutParams.setMargins(
+//                    (int) BannerUtils.dp2px(18),
+//                    (int) BannerUtils.dp2px(20),
+//                    (int) BannerUtils.dp2px(18),
+//                    (int) BannerUtils.dp2px(20)
+//            );
+//            viewHoder.cardView.setLayoutParams(layoutParams);
+//        }
         return convertView;
     }
 
@@ -65,5 +86,6 @@ public class CardAdapter extends BaseAdapter {
         ImageView imageView;
         TextView title;
         TextView content;
+        CardView cardView;
     }
 }

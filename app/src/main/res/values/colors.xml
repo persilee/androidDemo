@@ -4,8 +4,11 @@
     <color name="colorPrimaryDark">@color/main_color</color>
     <color name="colorAccent">@color/main_color</color>
 
-    <color name="textColor">#BDBDBD</color>
+    <color name="textColor">#333</color>
 
-    <color name="main_color">#607D8B</color>
+    <color name="main_color">#009688</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="text_Grey">#c1c1c2</color>
+    <color name="colorAccentA16">#29009688</color>
 
 </resources>

@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+    android:background="@drawable/ripple_bg"
+    >
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="16dp"
         app:cardCornerRadius="6dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginHorizontal="18dp"
-        app:cardElevation="16dp">
+        app:cardElevation="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="6dp"
+                android:paddingHorizontal="10dp"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:text="CardView Demo" />
@@ -40,9 +45,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="6dp"
                 android:layout_marginBottom="6dp"
+                android:paddingHorizontal="10dp"
+                android:paddingBottom="10dp"
                 tools:text="Hooray! It's snowing! It's time to make a snowman.James runs out. He makes a big pile of snow. He puts a big snowball on top. He adds a scarf and a hat. He adds an orange for the nose. He adds coal for the eyes and buttons.In the evening, James opens the door. What does he see?" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-</FrameLayout>
+</LinearLayout>

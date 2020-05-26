@@ -5,35 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CardViewActivity"
-    android:orientation="vertical">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_text_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="6dp"
-        app:cardElevation="6dp"
-        android:layout_margin="16dp"
-        android:layout_gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/card_text"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:text="add data"
-            android:background="?attr/selectableItemBackground"
-            android:gravity="center" />
-    </androidx.cardview.widget.CardView>
+    android:orientation="vertical"
+    >
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@null"
-        android:background="#fff"
-        tools:context=".CardViewListActivity"
         android:id="@+id/card_list_view"
-
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:clipToPadding="false"
+        android:listSelector="@android:color/transparent"
+        android:divider="@null" />
 
 
 </LinearLayout>

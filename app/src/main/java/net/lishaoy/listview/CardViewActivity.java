@@ -1,9 +1,12 @@
 package net.lishaoy.listview;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,7 +20,6 @@ import java.util.List;
 
 public class CardViewActivity extends AppCompatActivity {
 
-    private TextView textView;
     private ListView listView;
     private List<Card> cards = new ArrayList<>();
     private CardAdapter cardAdapter;
@@ -27,22 +29,25 @@ public class CardViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_view);
         setTitle("CardView");
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
-        textView = findViewById(R.id.card_text);
         listView = findViewById(R.id.card_list_view);
         cards.addAll(CardDao.generateMockList());
         cardAdapter = new CardAdapter(this,cards);
         listView.setAdapter(cardAdapter);
+    }
 
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                cards.addAll(CardDao.generateMockList());
-                cardAdapter = new CardAdapter(CardViewActivity.this,cards);
-                listView.setAdapter(cardAdapter);
-                Toast.makeText(CardViewActivity.this,"add 8，total "+ cards.size(), Toast.LENGTH_SHORT).show();
-            }
-        });
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
