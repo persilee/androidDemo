@@ -1,9 +1,13 @@
 package net.lishaoy.listview;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -19,7 +23,7 @@ import net.lishaoy.listview.tabPages.ReactFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabLayoutActivity extends FragmentActivity {
+public class TabLayoutActivity extends AppCompatActivity {
     private static final String TAG = "TabLayoutActivity";
     private XTabLayout tabLayout;
     private ViewPager2 viewPager;
@@ -30,6 +34,11 @@ public class TabLayoutActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_layout);
         setTitle("TabLayout");
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         viewPager = findViewById(R.id.view_pager);
         tabLayout = findViewById(R.id.tab);
@@ -86,5 +95,14 @@ public class TabLayoutActivity extends FragmentActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            this.finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

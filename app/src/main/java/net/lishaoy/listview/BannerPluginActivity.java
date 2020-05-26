@@ -1,11 +1,13 @@
 package net.lishaoy.listview;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
@@ -42,6 +44,12 @@ public class BannerPluginActivity extends AppCompatActivity implements OnPageCha
         setContentView(R.layout.activity_banner_plugin);
         setTitle("BannerPlugin");
 
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         images.add(R.drawable.bg1);
         images.add(R.drawable.bg2);
         images.add(R.drawable.bg4);
@@ -74,6 +82,15 @@ public class BannerPluginActivity extends AppCompatActivity implements OnPageCha
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            this.finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public class ImageAdapter extends BannerAdapter<DataBean,ImageAdapter.BannerViewHolder> {

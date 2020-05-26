@@ -5,15 +5,25 @@ public class Card {
     private int imgId;
     private String title;
     private String content;
+    private boolean isLongImg;
 
     public Card() {
     }
 
-    public Card(int id, int imgId, String title, String content) {
+    public Card(int id, int imgId, String title, String content, boolean isLongImg) {
         this.id = id;
         this.imgId = imgId;
         this.title = title;
         this.content = content;
+        this.isLongImg = isLongImg;
+    }
+
+    public boolean isLongImg() {
+        return isLongImg;
+    }
+
+    public void setLongImg(boolean longImg) {
+        isLongImg = longImg;
     }
 
     public int getId() {

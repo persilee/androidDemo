@@ -1,9 +1,12 @@
 package net.lishaoy.listview;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -26,6 +29,11 @@ public class AsyncTaskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_async_task);
         setTitle("AsyncTask");
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         initViews();
         initEvents();
@@ -55,6 +63,15 @@ public class AsyncTaskActivity extends AppCompatActivity {
         btn_begin = findViewById(R.id.async_btn_begin);
         btn_pause = findViewById(R.id.async_btn_pause);
         progressTask = new ProgressTask();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            this.finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     class ProgressTask extends AsyncTask<Void, Integer, String> {
