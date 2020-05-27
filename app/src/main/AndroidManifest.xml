@@ -3,6 +3,7 @@
     package="net.lishaoy.listview">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,10 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".WebViewActivity"></activity>
         <activity
             android:name=".GlideActivity"
             android:label="@string/title_activity_glide"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".CardViewActivity" />
         <activity android:name=".AsyncTaskActivity" />
