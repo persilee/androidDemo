@@ -6,19 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 
 import net.lishaoy.listview.bean.Card;
-import net.lishaoy.listview.util.BannerUtils;
 
 import java.util.List;
-
-import static androidx.cardview.widget.CardView.*;
 
 public class CardAdapter extends BaseAdapter {
 

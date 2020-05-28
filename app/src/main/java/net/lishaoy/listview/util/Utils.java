@@ -21,7 +21,7 @@ import com.youth.banner.Banner;
 import com.youth.banner.R;
 import com.youth.banner.config.BannerConfig;
 
-public class BannerUtils {
+public class Utils {
 
     /**
      * 获取真正的位置

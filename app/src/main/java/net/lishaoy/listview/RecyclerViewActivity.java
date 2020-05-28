@@ -10,19 +10,14 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import net.lishaoy.listview.util.BannerUtils;
+import net.lishaoy.listview.util.Utils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.OnItemClick;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 
@@ -82,10 +77,10 @@ public class RecyclerViewActivity extends AppCompatActivity {
         gridRecyclerViewAdapter = new GridRecyclerViewAdapter(RecyclerViewActivity.this);
         recyclerView.setAdapter(gridRecyclerViewAdapter);
         recyclerView.setPadding(
-                (int) BannerUtils.dp2px(8),
-                (int) BannerUtils.dp2px(8),
-                (int) BannerUtils.dp2px(8),
-                (int) BannerUtils.dp2px(8)
+                (int) Utils.dp2px(8),
+                (int) Utils.dp2px(8),
+                (int) Utils.dp2px(8),
+                (int) Utils.dp2px(8)
         );
     }
 

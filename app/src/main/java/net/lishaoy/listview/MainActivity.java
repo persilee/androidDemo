@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         data.add(item);
         item = new Item(R.drawable.ic_web_view,"WebView",WebViewActivity.class);
         data.add(item);
+        item = new Item(R.drawable.ic_animation,"Animation",AnimationActivity.class);
+        data.add(item);
 
 
         BaseAdapter adapter = new MyAdapter(data,this);

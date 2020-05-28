@@ -1,7 +1,6 @@
 package net.lishaoy.listview;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import net.lishaoy.listview.bean.Card;
 import net.lishaoy.listview.dao.CardDao;
-import net.lishaoy.listview.util.BannerUtils;
+import net.lishaoy.listview.util.Utils;
 
 import java.util.List;
 
@@ -42,10 +41,10 @@ public class StaggeredRecyclerViewAdapter extends RecyclerView.Adapter<Staggered
         holder.content.setText(listData.get(position).getContent());
 
         if(listData.get(position).isLongImg()){
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) BannerUtils.dp2px(286));
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Utils.dp2px(286));
             holder.imageView.setLayoutParams(layoutParams);
         }else{
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) BannerUtils.dp2px(126));
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Utils.dp2px(126));
             holder.imageView.setLayoutParams(layoutParams);
         }
     }
