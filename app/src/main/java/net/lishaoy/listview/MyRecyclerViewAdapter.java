@@ -15,6 +15,9 @@ import net.lishaoy.listview.dao.CardDao;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder> {
 
     private Context context;
@@ -45,16 +48,17 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private final ImageView imageView;
-        private final TextView title;
-        private final TextView content;
+        @BindView(R2.id.recycler_list_img)
+        ImageView imageView;
+        @BindView(R2.id.recycler_list_title)
+        TextView title;
+        @BindView(R2.id.recycler_list_content)
+        TextView content;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.recycler_list_img);
-            title = itemView.findViewById(R.id.recycler_list_title);
-            content = itemView.findViewById(R.id.recycler_list_content);
+            ButterKnife.bind(this,itemView);
         }
 
 

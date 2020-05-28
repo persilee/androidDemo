@@ -13,16 +13,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import net.lishaoy.listview.util.BannerUtils;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.OnItemClick;
+
 public class RecyclerViewActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
+    @BindView(R2.id.recycler_container)
+    RecyclerView recyclerView;
+    @BindView(R2.id.recycler_btn_switch)
+    FloatingActionButton button;
     private MyRecyclerViewAdapter myRecyclerViewAdapter;
-    private FloatingActionButton button;
     private GridRecyclerViewAdapter gridRecyclerViewAdapter;
 
     @Override
@@ -30,33 +38,28 @@ public class RecyclerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
         setTitle("Recycler");
-
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+        ButterKnife.bind(this);
 
-        recyclerView = findViewById(R.id.recycler_container);
         /**
          * 线性布局
          */
         getLinearLayout();
+    }
 
-        button = findViewById(R.id.recycler_btn_switch);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (recyclerView.getLayoutManager().getClass() == LinearLayoutManager.class) {
-                    getGridLayout();
-                }else if (recyclerView.getLayoutManager().getClass() == GridLayoutManager.class) {
-                    getStaggeredLayout();
-                }else if(recyclerView.getLayoutManager().getClass() == StaggeredGridLayoutManager.class){
-                    getLinearLayout();
-                }
-            }
-        });
-
+    @OnClick(R2.id.recycler_btn_switch)
+    public void switchClick() {
+        if (recyclerView.getLayoutManager().getClass() == LinearLayoutManager.class) {
+            getGridLayout();
+        }else if (recyclerView.getLayoutManager().getClass() == GridLayoutManager.class) {
+            getStaggeredLayout();
+        }else if(recyclerView.getLayoutManager().getClass() == StaggeredGridLayoutManager.class){
+            getLinearLayout();
+        }
     }
 
     private void getLinearLayout() {
